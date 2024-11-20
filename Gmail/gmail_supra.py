@@ -15,13 +15,12 @@ class Gmail_API:
 
     def form_message(self):
         update_messages = {}
-        message = '<b>Supra</b>\n\n'
 
         for index, message_data in enumerate(self.message_with_supra.values()):
-            message += f"##### {index} #####\n"
+            message = f'#### {index + 1} ####\n'
             message += f'<b>From</b>: {message_data['from']}\n'
             message += f'<b>Title</b>: {message_data['title']}\n\n'
-            message += f'<b>Text</b>: {message_data['text'][:50]}...\n\n'
+            message += f'<b>Text</b>: {message_data['text'][:500]}...\n\n'
 
             update_messages[index] = message
 

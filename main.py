@@ -1,3 +1,4 @@
+import time
 import toml
 
 from Gmail.gmail_supra import Gmail_API
@@ -21,8 +22,11 @@ def main():
     gmail_obj.get_text_from_email()
     messages = gmail_obj.form_message()
 
-    for message in messages.values():
+    for index, message in enumerate(messages.values()):
+        if index == 0:
+            message = ''.join(['Supra\n\n', message])
         tg_bot_obj.send_message_all_user(message)
+        time.sleep(1)
 
 
     gmail_obj.disconnect()
