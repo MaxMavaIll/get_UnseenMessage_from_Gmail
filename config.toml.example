@@ -1,0 +1,9 @@
+
+
+[gmail]
+username = ''
+password = ''
+
+[tg_bot]
+token = ''
+chat_id = '' # str | dict
